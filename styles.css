@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #e7d6ff;
+  width: 220px;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  color: #430457;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #d1bbfc;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 220px; /* Account for sidebar width */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topbar {
+  background-color: #430457;
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 220px;
+  right: 0;
+  z-index: 100;
+}
+
+.content-area {
+  margin-top: 60px; /* Account for fixed topbar */
+  padding: 30px;
+  overflow-y: auto;
+  height: calc(100vh - 60px); /* Make scrollable */
+}
+
+/* Profile Dropdown */
+.profile {
+  position: relative;
+}
+
+.profile img {
+  border-radius: 50%;
+  height: 40px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+}
+
+.dropdown a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Upload & Forms */
+.upload-form, .folder-form {
+  margin-bottom: 20px;
+}
+
+input[type="file"], input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #9756ff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.file-item {
+  background: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.forms-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.upload-form, .folder-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.upload-form label, .folder-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.upload-form input[type="file"],
+.folder-form input[type="text"] {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Scrollbar Styling */
+.content-area::-webkit-scrollbar {
+  width: 10px;
+}
+.content-area::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.content-area::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .topbar {
+    left: 0;
+  }
+}
+
+/* Upload first, then folders, then files */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.section li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* File item */
+.file-item {
+  background: #f9f9f9;
+  position: relative;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: "Segoe UI", "Montserrat", sans-serif;
+}
+
+.file-item a {
+  color: #5a39c2;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.file-item a:hover {
+  text-decoration: underline;
+}
+
+/* Upload form appearance */
+.upload-form {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.upload-form input[type="file"] {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Adjust typography globally */
+body, html {
+  font-family: 'Segoe UI', 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+button {
+  font-size: 13px;
+  padding: 10px 30px;
+}
+
+/* Three-dot icon styling */
+.more-options {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0 10px;
+  user-select: none;
+  position: relative;
+}
+
+/* Popup menu for Rename/Delete */
+.file-options {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  margin-top: 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+  padding: 10px;
+  min-width: 100px;
+}
+
+.file-options a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.file-options a:hover {
+  background-color: #f0f0f0;
+}
