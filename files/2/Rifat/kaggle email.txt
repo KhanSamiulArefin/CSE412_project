@@ -1,0 +1,12 @@
+subject: Request for Access to Kaggle Competition Dataset for Academic Research
+
+My name is Masum Mushfik Rifat, and I am currently a Computer Science undergrad student at East West University. I am writing to respectfully request access to the dataset used in the Kaggle competition titled "Credit score (Ericsson April 24) - Good deadline".
+
+I am researching different datasets about the credit scores of bank customers, and this dataset would be extremely valuable for the empirical component of my work. The competition’s data aligns closely with the analytical needs of my project, and I intend to use it solely for academic purposes.
+
+Thank you very much for considering my request. I would be grateful for any guidance on the appropriate procedure to obtain access or any alternative channels through which the data might be made available.
+
+Warm regards,
+Masum Mushfik Rifat
+Department of CSE
+East West University
